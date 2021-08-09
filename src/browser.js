@@ -121,6 +121,7 @@ class RawFileBrowser extends React.Component {
     renderStyle: 'table',
 
     startOpen: false,
+    openFolders: {},
 
     headerRenderer: TableHeader,
     headerRendererProps: {},
@@ -504,7 +505,7 @@ class RawFileBrowser extends React.Component {
       icons: this.props.icons,
 
       // browser state
-      openFolders: this.state.openFolders,
+      openFolders: { ...this.props.openFolders, ...this.state.openFolders },
       nameFilter: this.state.nameFilter,
       selection: this.state.selection,
       activeAction: this.state.activeAction,
